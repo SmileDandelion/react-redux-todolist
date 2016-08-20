@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import {createStore} from 'redux';
 
 import AddTodo from './components/addtodo';
+import TodoList from './components/todolist';
 
 import reducer from './reducers/reducer';
 
@@ -18,6 +19,7 @@ class App extends Component {
     render() {
         return <div>
             <AddTodo onAdd={this.add.bind(this)}/>
+            <TodoList todos={store.getState().todos}/>
         </div>
     }
 }
