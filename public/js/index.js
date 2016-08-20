@@ -4,7 +4,7 @@ import {createStore} from 'redux';
 
 import AddTodo from './components/addtodo';
 import TodoList from './components/todolist';
-
+import Footer from './components/footer';
 import reducer from './reducers/reducer';
 
 
@@ -17,16 +17,19 @@ class App extends Component {
     }
 
     toggle(index) {
-        store.dispatch({type:'TOGGLE',  index});
+        store.dispatch({type: 'TOGGLE', index});
     }
 
-    delete(index){
-        store.dispatch({type:'DELETE',index});
+    delete(index) {
+        store.dispatch({type: 'DELETE', index});
     }
+
     render() {
         return <div>
             <AddTodo onAdd={this.add.bind(this)}/>
-            <TodoList onDelete={this.delete.bind(this)} onToggle={this.toggle.bind(this)} todos={store.getState().todos}/>
+            <TodoList onDelete={this.delete.bind(this)} onToggle={this.toggle.bind(this)}
+                      todos={store.getState().todos}/>
+            <Footer/>
         </div>
     }
 }
