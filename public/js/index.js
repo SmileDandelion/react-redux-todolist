@@ -24,12 +24,15 @@ class App extends Component {
         store.dispatch({type: 'DELETE', index});
     }
 
+    filter(filterName){
+        store.dispatch({type:'SET_FILTER',filterName});
+    }
     render() {
         return <div>
             <AddTodo onAdd={this.add.bind(this)}/>
             <TodoList onDelete={this.delete.bind(this)} onToggle={this.toggle.bind(this)}
-                      todos={store.getState().todos}/>
-            <Footer/>
+                      todos={store.getState().filter}/>
+            <Footer onFilter={this.filter.bind(this)}/>
         </div>
     }
 }
