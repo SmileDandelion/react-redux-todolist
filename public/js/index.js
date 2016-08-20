@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {createStore} from 'redux';
+
+import AddTodo from './components/addtodo';
+
 import reducer from './reducers/reducer';
+
 
 const store = createStore(reducer);
 
 class App extends Component {
     render() {
         return <div>
-            hello
+            <AddTodo/>
         </div>
     }
 }
