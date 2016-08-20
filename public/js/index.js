@@ -16,10 +16,14 @@ class App extends Component {
         store.dispatch({type: 'ADD', text});
     }
 
+    toggle(index) {
+        store.dispatch({type:'TOGGLE',  index})
+    }
+
     render() {
         return <div>
             <AddTodo onAdd={this.add.bind(this)}/>
-            <TodoList todos={store.getState().todos}/>
+            <TodoList onToggle={this.toggle.bind(this)} todos={store.getState().todos}/>
         </div>
     }
 }
