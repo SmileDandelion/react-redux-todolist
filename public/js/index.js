@@ -9,10 +9,15 @@ import reducer from './reducers/reducer';
 
 const store = createStore(reducer);
 
+
 class App extends Component {
+    add(text) {
+        store.dispatch({type: 'ADD', text});
+    }
+
     render() {
         return <div>
-            <AddTodo/>
+            <AddTodo onAdd={this.add.bind(this)}/>
         </div>
     }
 }
