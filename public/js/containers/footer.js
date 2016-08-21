@@ -1,3 +1,4 @@
-/**
- * Created by ning on 16-8-21.
- */
+import {connect} from 'react-redux';
+import Footer from '../components/footer';
+
+export default connect()(Footer);

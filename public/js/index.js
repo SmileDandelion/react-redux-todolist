@@ -7,6 +7,7 @@ import reducer from './reducers/reducer';
 
 import AddTodo from './containers/add-todo';
 import TodoList from './containers/todo-list';
+import Footer from './containers/footer';
 
 const store = createStore(reducer);
 
@@ -15,6 +16,7 @@ class App extends Component {
         return <div>
             <AddTodo/>
             <TodoList/>
+            <Footer/>
         </div>
     }
 }
