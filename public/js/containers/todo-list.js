@@ -12,6 +12,12 @@ const mapDispanchToProps = (dispanch)=> {
                 type: 'TOGGLE',
                 index
             });
+        },
+        onDelete: (index)=> {
+            dispanch({
+                type: 'DELETE',
+                index
+            });
         }
     }
 };
