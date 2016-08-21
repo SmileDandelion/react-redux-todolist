@@ -4,4 +4,15 @@ import TodoList from '../components/todo-list';
 const mapStateToProps = (state)=> {
     return {todos: state.todos}
 };
-export default connect(mapStateToProps)(TodoList);
+
+const mapDispanchToProps = (dispanch)=> {
+    return {
+        onToggle: (index)=> {
+            dispanch({
+                type: 'TOGGLE',
+                index
+            });
+        }
+    }
+};
+export default connect(mapStateToProps, mapDispanchToProps)(TodoList);
