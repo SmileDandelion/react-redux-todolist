@@ -2,19 +2,19 @@ import {connect} from 'react-redux';
 import TodoList from '../components/todo-list';
 
 const mapStateToProps = (state)=> {
-    return {todos: state.todos}
+    return {filter: state.filter}
 };
 
-const mapDispanchToProps = (dispanch)=> {
+const mapDispanchToProps = (dispatch)=> {
     return {
         onToggle: (index)=> {
-            dispanch({
+            dispatch({
                 type: 'TOGGLE',
                 index
             });
         },
         onDelete: (index)=> {
-            dispanch({
+            dispatch({
                 type: 'DELETE',
                 index
             });

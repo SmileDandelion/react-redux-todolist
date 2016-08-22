@@ -1,9 +1,9 @@
 import TodoList from '../components/add-todo';
 import {connect} from 'react-redux';
-const mapDispanchTOProps =(dispanch)=>{
+const mapDispanchTOProps =(dispatch)=>{
     return {
         onAdd:(text)=>{
-            dispanch({type:'ADD',text});
+            dispatch({type:'ADD',text});
         }
     }
 };
